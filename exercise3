@@ -1,0 +1,49 @@
+cd /Users/shoryagupta/Documents
+mkdir project1 (making directory)
+mkdir project2 (making directory)
+cd project1
+git init
+git config --global user.name "shorya009" (setting global variables)
+git config --global user.email "shorya@vinsol.com" (setting global variables)
+git config -l  (to list all config variables)
+
+
+touch test1.txt
+open test1.txt
+git add test1.txt
+git commit -m "added test1.txt first commit"
+git status
+git push -u origin staging
+
+cd ..
+cd project2
+git clone path_name_of_repo
+cd test_project
+git checkout staging
+open test1.txt
+git add test1.txt
+git commit -m "change in test1.txt 2nd commit"
+git push -u origin staging
+
+cd ..
+cd..
+cd project1
+git checkout staging
+open test1.txt
+git add test1.txt
+git commit -m "third commit changes in file1.txt"
+git push -u origin staging
+
+
+explaination:-
+the updates got rejected because 
+1)remote conatains work 
+2) another repository project2 has already pushed once to the same ref
+3) in order to update we need to first pull the changes solve the conflicts and then push
+
+
+git pull origin staging
+open test1.txt (solve conflict)
+git merge --continue
+git push origin staging
+

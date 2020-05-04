@@ -7,7 +7,7 @@ git init
 git config --global user.name "shorya009" (setting global variables)
 git config --global user.email "shorya@vinsol.com" (setting global variables)
 git config -l  (to list all config variables)
-git remote add origin pah_name_of_repository
+git remote add origin path_name_of_repository
 git pull origin master
 git push -u origin master
 

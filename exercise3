@@ -47,3 +47,41 @@ open test1.txt (solve conflict)
 git merge --continue
 git push origin staging
 
+
+git checkout master
+git merge staging
+
+git checkout -b testing
+open test1.txt
+git add test1.txt
+git commit -m " change in test1.txt"
+
+
+open test1.txt
+git add test1.txt
+git commit -m "change in test1.txt"
+
+open test1.txt
+git add test1.txt
+git commit -m "change in test1.txt"
+
+open test1.txt
+git add test1.txt
+git commit -m "4th change in test1.txt"
+
+open test1.txt
+git add test1.txt
+git commit -m "5th change in test1.txt"
+
+open test1.txt
+git add test1.txt
+git commit -m "6th change in test1.txt"
+
+open test1.txt
+git add test1.txt
+git commit -m "7th change in test1.txt"
+
+git push origin testing
+git checkout master
+
+

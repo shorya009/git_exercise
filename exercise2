@@ -1,0 +1,7 @@
+cd /Users/shoryagupta/Documents
+mkdir tags (making directory)
+cd tags
+git init
+git config --global user.name "shorya009" (setting global variables)
+git config --global user.email "shorya@vinsol.com" (setting global variables)
+git config -l  (to list all config variables)

@@ -173,7 +173,7 @@ git stash drop stash@{0} (To remove particular stash)
 
 create a repository on git
 git checkout master
-git remote add path_name_of_repository_created
+git remote add origin path_name_of_repository_created
 git pull orgin master
 (solve the conflicts in files)
 git add .

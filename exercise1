@@ -113,8 +113,9 @@ git merge feature1
 open file1.txt (Solved the conflicts)
 git status
 git add file1.txt
-git diff
-git commit -m “merged file1 of master and feature1 successfully”
+git merge --continue (give a auto merge message "merge branch feature1")
+git status
+
 
 16)create branch "feature2" from master 
 
@@ -170,7 +171,7 @@ git stash drop stash@{0} (To remove particular stash)
 
 22)create a repository on github for your working repository and push changes on remote repository.
 
-create nre repository on git
+create a repository on git
 git checkout master
 git remote add path_name_of_repository_created
 git pull orgin master

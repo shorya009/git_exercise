@@ -1,61 +1,90 @@
+1)Create two folders project1 and project2 locally. Create a repository in github or bitbucket, name it test_project.
 cd /Users/shoryagupta/Documents
 mkdir project1 (making directory)
 mkdir project2 (making directory)
+
+2)Switch to project1
 cd project1
 git init
 git config --global user.name "shorya009" (setting global variables)
 git config --global user.email "shorya@vinsol.com" (setting global variables)
 git config -l  (to list all config variables)
 
+3)Switch to a new branch - 'staging'.
+git checkout staging
 
+4)Add a file in it - 'test1' and add content to it 'This is first commit'.
 touch test1.txt
 open test1.txt
 git add test1.txt
 git commit -m "added test1.txt first commit"
 git status
+
+5)Push it to github.
 git push -u origin staging
 
+6)Move to folder project2.
 cd ..
 cd project2
+
+7)Clone the repo in project2.
 git clone path_name_of_repo
 cd test_project
+
+8)Switch to staging.
 git checkout staging
+
+9)Change the text in file 'test1' to 'This is second commit'.
 open test1.txt
 git add test1.txt
+
+10)Commit and push to remote branch.
 git commit -m "change in test1.txt 2nd commit"
 git push -u origin staging
 
+11)Move to project1.
 cd ..
 cd..
 cd project1
+
+12)Switch to staging branch.
 git checkout staging
+
+
+13)Change the text in file 'test1' to 'This is third commit'.
 open test1.txt
 git add test1.txt
+
+
+14)Commit and push to remote branch. (Explain what happened here).
 git commit -m "third commit changes in file1.txt"
 git push -u origin staging
-
-
 explaination:-
 the updates got rejected because 
 1)remote conatains work 
 2) another repository project2 has already pushed once to the same ref
 3) in order to update we need to first pull the changes solve the conflicts and then push
 
-
 git pull origin staging
 open test1.txt (solve conflict)
 git merge --continue
 git push origin staging
 
-
+15)Switch to master.
 git checkout master
+
+16)Merge staging branch into master.
 git merge staging
 
+17)Create a new branch testing.
 git checkout -b testing
+
+18)Change the text to 'A is an alphabet' and commit.
 open test1.txt
 git add test1.txt
 git commit -m " change in test1.txt"
 
+19)Repeat the 'step 18' seven times and each time update the alphabet 'A' to 'B' to 'C' etc.(Don't forget to commit the change everytime)
 
 open test1.txt
 git add test1.txt
@@ -82,6 +111,63 @@ git add test1.txt
 git commit -m "7th change in test1.txt"
 
 git push origin testing
+
+21)Checkout to master.
 git checkout master
 
 
+22)Change the text '1 is a number' and commit
+open test1.txt
+git add test1.txt
+git commit -m "1st text change in file1 master"
+
+
+23)Repeat the 'step 22' seven times and each time update the number '1' to '2' to '3' etc.(Don't forget to commit the change everytime)
+open test1.txt
+git add test1.txt
+git commit -m "2nd text change in file1 master"
+
+open test1.txt
+git add test1.txt
+git commit -m "3rd text change in file1 master"
+
+open test1.txt
+git add test1.txt
+git commit -m "4th text change in file1 master"
+
+open test1.txt
+git add test1.txt
+git commit -m "5th text change in file1 master"
+
+open test1.txt
+git add test1.txt
+git commit -m "6th text change in file1 master"
+
+open test1.txt
+git add test1.txt
+git commit -m "7th text change in file1 master"
+
+
+24)Push the branch to github.
+git push -u origin master
+
+25)Now, rebase testing into master(and don't push the new master and testing branch).
+git checkout testing
+git rebase master
+open test1.txt (solve conflicts)
+git add test1.txt
+git rebase --continue
+
+26)Move to project2.
+cd ..
+cd project1
+cd test_project
+
+27)Track testing branch.
+git pull origin
+
+28)Checkout to master.
+git checkout master
+
+29)Merge branch testing into master.
+git merge testing

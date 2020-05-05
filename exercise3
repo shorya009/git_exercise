@@ -171,3 +171,9 @@ git checkout master
 
 29)Merge branch testing into master.
 git merge testing
+
+
+30) master branch is the branch which contains merged contents of master and testing
+testing branch contains its original content (last commit) only
+
+master branch is now 1 commit ahead due to merging
